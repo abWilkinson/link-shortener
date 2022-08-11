@@ -9,5 +9,4 @@ public class TpxDemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TpxDemoApplication.class, args);
 	}
-
 }
