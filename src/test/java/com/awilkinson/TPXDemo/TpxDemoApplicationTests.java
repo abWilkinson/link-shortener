@@ -79,6 +79,35 @@ class TpxDemoApplicationTests {
 		assertEquals("An invalid encoded URL has been provided.", error);
 	}
 
+	@Test
+	void missingURLForDecodeFailsValidation() {
+		String error = given()
+				.body(new EncodeDecodeDTO(""))
+				.contentType(ContentType.JSON)
+				.post(DECODE_URL)
+				.then()
+				.statusCode(400)
+				.extract()
+				.path("msg");
+
+		assertEquals("must not be blank", error);
+	}
+
+	@Test
+	void missingURLForEncodeFailsValidation() {
+		String error = given()
+				.body(new EncodeDecodeDTO(""))
+				.contentType(ContentType.JSON)
+				.post(ENCODE_URL)
+				.then()
+				.statusCode(400)
+				.extract()
+				.path("msg");
+
+		assertEquals("must not be blank", error);
+	}
+
+
 
 	private String encodeDecode(String originalURL) {
 		String encodedUrl = encode(originalURL);

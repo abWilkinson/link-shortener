@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 /**
  * EncodeController
  *
@@ -27,7 +29,7 @@ public class EncodeController {
     @PostMapping(
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<EncodeDecodeDTO> encode(@RequestBody EncodeDecodeDTO encodeDecodeDTO) {
+    public ResponseEntity<EncodeDecodeDTO> encode(@Valid @RequestBody EncodeDecodeDTO encodeDecodeDTO) {
         return new ResponseEntity<>(encodeDecodeService.encode(encodeDecodeDTO.getUrl()), HttpStatus.CREATED);
     }
 }

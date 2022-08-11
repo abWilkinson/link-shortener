@@ -1,9 +1,12 @@
 package com.awilkinson.TPXDemo.model;
 
+import javax.validation.constraints.NotBlank;
+
 /**
  * The expected request and response DTO, which only contains a url to be encoded or decoded.
  */
 public class EncodeDecodeDTO {
+    @NotBlank
     private String url;
 
     /**
