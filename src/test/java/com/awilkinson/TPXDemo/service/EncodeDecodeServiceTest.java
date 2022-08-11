@@ -48,7 +48,7 @@ public class EncodeDecodeServiceTest {
         when(shortenedURLRepository.findById(1L)).thenReturn(Optional.of(new ShortenedURL(1L, "http://test.com")));
         String decodedURL = encodeDecodeService.decode(baseURL + encoded).getUrl();
 
-        assertEquals(decodedURL, "http://test.com");
+        assertEquals("http://test.com", decodedURL);
     }
 
     @Test

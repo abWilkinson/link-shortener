@@ -2,6 +2,9 @@ package com.awilkinson.TPXDemo.domain;
 
 import javax.persistence.*;
 
+/**
+ * A database entity record representing a shortened URL.
+ */
 @Entity
 @Table
 public class ShortenedURL {

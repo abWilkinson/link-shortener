@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * EncodeController
+ *
+ * Support the encoding of a full URL into a shortened URL.
+ */
 @RestController
 @RequestMapping("/encode")
 public class EncodeController {

@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * DecodeController
+ *
+ * Support the decoding of a shortened URL into a full URL
+ */
 @RestController
 @RequestMapping("/decode")
 public class DecodeController {
